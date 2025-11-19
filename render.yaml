@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: student-registration
+    env: node
+    plan: free
+    region: oregon
+    branch: main
+    buildCommand: npm install
+    startCommand: npm start
+    autoDeploy: true
+    envVars:
+      - key: MONGODB_URI
+        value: <YOUR_MONGODB_ATLAS_URI>
+      - key: SESSION_SECRET
+        value: <YOUR_SECRET_KEY>
