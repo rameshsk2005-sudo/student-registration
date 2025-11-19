@@ -1,0 +1,24 @@
+<section class="card">
+  <h2>Login</h2>
+
+  <% if (error) { %>
+    <div class="errors"><%= error %></div>
+  <% } %>
+
+  <form action="/login" method="post" class="form">
+    <label>
+      Email
+      <input type="email" name="email" required />
+    </label>
+
+    <label>
+      Password
+      <input type="password" name="password" required />
+    </label>
+
+    <div class="buttons">
+      <button type="submit" class="btn">Login</button>
+      <a href="/signup" class="btn alt">Create account</a>
+    </div>
+  </form>
+</section>

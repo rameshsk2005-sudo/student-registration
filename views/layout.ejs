@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Registration System</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1><a href="/">Student Registration System</a></h1>
+
+      <nav>
+        <a href="/login">Login</a> |
+        <a href="/signup">Create Account</a> |
+        <a href="/courses">Available Courses</a> |
+        <a href="/students">Registered Students</a> |
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <%- body %>
+  </main>
+
+  <footer class="container">
+    <small>Built with Node.js, Express, MongoDB</small>
+  </footer>
+</body>
+</html>

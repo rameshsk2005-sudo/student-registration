@@ -1,0 +1,33 @@
+
+
+<section class="card">
+  <h2>Create Account</h2>
+
+  <% if (errors && errors.length > 0) { %>
+    <ul class="errors">
+      <% errors.forEach(err => { %>
+        <li><%= err.msg %></li>
+      <% }) %>
+    </ul>
+  <% } %>
+
+  <form action="/signup" method="POST">
+    <label>Name</label>
+    <input type="text" name="name" value="<%= form.name || '' %>" required>
+
+    <label>Email</label>
+    <input type="email" name="email" value="<%= form.email || '' %>" required>
+
+    <label>SRN</label>
+    <input type="text" name="srn" value="<%= form.srn || '' %>" required>
+
+    <label>Password (min 6 characters)</label>
+    <input type="password" name="password" required>
+
+    <button type="submit">Create Account</button>
+  </form>
+
+  <p>
+    Already have an account? <a href="/login">Login here</a>
+  </p>
+</section>

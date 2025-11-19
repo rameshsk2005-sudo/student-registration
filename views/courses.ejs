@@ -1,0 +1,35 @@
+<section class="card">
+  <h2>Available Courses</h2>
+
+  <% if (!courses || courses.length === 0) { %>
+    <p>No available courses to register (you may have registered all courses).</p>
+  <% } else { %>
+    <ul class="course-list">
+      <% courses.forEach(c => { %>
+        <li>
+          <strong><%= c.name %></strong>
+          <form action="/courses/<%= c.id %>/register" method="post" style="display:inline;">
+            <button type="submit" class="btn">Register</button>
+          </form>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
+
+  <hr/>
+  <h3>Your Registered Courses</h3>
+  <% if (!registered || registered.length === 0) { %>
+    <p>You have no registered courses yet.</p>
+  <% } else { %>
+    <ul>
+      <% registered.forEach(rc => { %>
+        <li><%= rc.name %> — <small><%= new Date(rc.registeredAt).toLocaleString() %></small></li>
+      <% }) %>
+    </ul>
+  <% } %>
+
+  <div style="margin-top:16px;">
+    <a href="/my-courses" class="btn">My Courses</a>
+    <a href="/logout" class="btn alt">Logout</a>
+  </div>
+</section>

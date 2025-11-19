@@ -1,0 +1,15 @@
+
+
+<section class="card">
+  <h2>My Courses</h2>
+
+  <% if (!registered || registered.length === 0) { %>
+    <p>You have not registered for any courses yet.</p>
+  <% } else { %>
+    <ul>
+      <% registered.forEach(c => { %>
+        <li><%= c.name %></li>
+      <% }) %>
+    </ul>
+  <% } %>
+</section>

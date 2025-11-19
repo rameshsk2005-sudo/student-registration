@@ -1,0 +1,15 @@
+
+
+<section class="card">
+  <h2>Registered Students</h2>
+
+  <% if (students.length === 0) { %>
+    <p>No students registered yet.</p>
+  <% } %>
+
+  <ul>
+    <% students.forEach(s => { %>
+      <li><strong><%= s.name %></strong> - <%= s.email %> - <%= s.srn %></li>
+    <% }) %>
+  </ul>
+</section>

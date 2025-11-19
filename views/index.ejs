@@ -1,0 +1,40 @@
+<section class="card">
+  <h2>Create Account</h2>
+
+  <% if (errors && errors.length) { %>
+    <div class="errors">
+      <ul>
+        <% errors.forEach(e => { %>
+          <li><%= e.msg %></li>
+        <% }) %>
+      </ul>
+    </div>
+  <% } %>
+
+  <form action="/signup" method="post" class="form">
+    <label>
+      Name
+      <input type="text" name="name" value="<%= form && form.name ? form.name : '' %>" required />
+    </label>
+
+    <label>
+      Email (Gmail)
+      <input type="email" name="email" value="<%= form && form.email ? form.email : '' %>" required />
+    </label>
+
+    <label>
+      SRN
+      <input type="text" name="srn" value="<%= form && form.srn ? form.srn : '' %>" required />
+    </label>
+
+    <label>
+      Password
+      <input type="password" name="password" required />
+    </label>
+
+    <div class="buttons">
+      <button type="submit" class="btn">Create Account</button>
+      <a href="/login" class="btn alt">Already have an account? Login</a>
+    </div>
+  </form>
+</section>
